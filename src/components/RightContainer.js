@@ -28,7 +28,6 @@ function RightContainer() {
   if (loading) {
     return null;
   }
-  console.log("data", data);
   const total = data.data.totalSamplesTested;
 
   return (
@@ -39,14 +38,14 @@ function RightContainer() {
           <h3>COVID Tested Details</h3>
           <br />
           <p>
-            TESTING STATUS UP TO <h4>{data.data.day}</h4>
+            TESTING STATUS UP TO <h4 className="yellow">{data.data.day}</h4>
           </p>
         </div>
         <br />
 
         <div>
           <h4>Total Samples Tested </h4>
-          <h2>{Number(total).toLocaleString("en-in")}</h2>
+          <h1 className="yellow">{Number(total).toLocaleString("en-in")}</h1>
         </div>
       </section>
     </>

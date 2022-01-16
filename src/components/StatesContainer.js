@@ -24,11 +24,12 @@ function StatesContainer() {
     };
     getData();
   }, [loading]);
-  const regional = data.data.regional;
-  console.log("data", data);
+
   if (loading) {
     return null;
   }
+  const regional = data.data.regional;
+  console.log("data", data);
   return (
     <>
       <section className="block-container">
