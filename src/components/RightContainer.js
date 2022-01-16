@@ -35,7 +35,7 @@ function RightContainer() {
     <>
       <section className="block-container text-center pd-1 bg-color-right text-white">
         <div>
-          <img src="/test-img.png" />
+          <img src="/test-img.png" alt="image-covid-test" />
           <h3>COVID Tested Details</h3>
           <br />
           <p>
