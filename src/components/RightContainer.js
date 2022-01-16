@@ -38,7 +38,7 @@ function RightContainer() {
           <h3>COVID Tested Details</h3>
           <br />
           <p>
-            TESTING STATUS UP TO <h4 className="yellow">{data.data.day}</h4>
+            TESTING STATUS UP TO <h3 className="yellow">{data.data.day}</h3>
           </p>
         </div>
         <br />
