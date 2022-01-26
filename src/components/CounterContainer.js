@@ -1,45 +1,26 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CountUp from "react-countup";
 
-function CounterContainer() {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const baseUrl = process.env.REACT_APP_BASEURL;
-
-  console.log("REACT_BASE_URL", baseUrl);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/stats/latest`);
-        setData(response.data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, [loading]);
-
-  if (loading) {
-    return null;
-  }
-
+function CounterContainer({ data }) {
+  let date = new Date(data.lastOriginUpdate);
+  let updatedDate = date.toLocaleDateString("en-in");
+  let updatedTime = date.toLocaleTimeString("en-in");
   return (
     <>
       {data && (
         <div>
+          <div>
+            <p className="time-text">
+              Updated {updatedDate} {updatedTime} local
+            </p>
+          </div>
+          <br />
           <section className="flex space-between align-center">
             <div className="text-center block-container block-container-width">
               <p>Total Confirmed</p>
               <h3 className="crimson">
                 <CountUp
-                  end={data.data.summary.confirmedCasesIndian}
+                  end={data.data.summary.total}
                   separator=","
                   duration={3}
                 />

@@ -226,3 +226,9 @@ th {
   position: -webkit-sticky;
   top: 2%;
 }
+.time-text {
+  color: #ec5270;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+}
